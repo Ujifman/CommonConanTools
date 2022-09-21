@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Чт сен 13 11:59:53 2018 by Qt Creator 4.7.0-->
+<externaltool id="Conan_Install_Sample_Prod">
+    <description>PROD Conan Install for Sample</description>
+    <displayname>PROD Conan Install for Sample</displayname>
+    <category>Conan PROD</category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>conan</path>
+        <arguments>install -if &quot;%{CurrentProject:BuildPath}/sample&quot; &quot;%{CurrentProject:Path}/sample&quot; --build=never -s build_type=%{JS:if (&quot;%{CurrentBuild:Type}&quot; == &quot;release&quot;) &quot;Release&quot;; else &quot;Debug&quot;} -u</arguments>
+    </executable>
+</externaltool>

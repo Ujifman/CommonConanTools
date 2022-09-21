@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Пт сен 13 10:13:08 2019 by Qt Creator 4.9.2-->
+<externaltool id="DEV_Conan_Install_for_Test_Public">
+    <description>DEV Conan Install for Test Public</description>
+    <displayname>DEV Conan Install for Test Public</displayname>
+    <category>Conan</category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>conan</path>
+        <arguments>install -if &quot;%{ActiveProject:BuildConfig:Path}\test_package&quot; &quot;%{ActiveProject:Path}\test_package&quot; --build=never -s build_type=%{JS:if (&quot;%{ActiveProject:BuildConfig:Type}&quot; == &quot;debug&quot;) &quot;Debug&quot;; else &quot;Release&quot;} -e OVERRIDE_CONAN_CHANNEL=dev -u -pr %{JS:if (&quot;%{ActiveProject:Kit:Name}&quot;.includes(&quot;Qt 5.9.8 MinGW&quot;)) &quot;qt5.9.8&quot;; else if (&quot;%{ActiveProject:Kit:Name}&quot;.includes(&quot;Qt 5.13.2 MinGW&quot;)) &quot;qt5.13.2&quot;; else if (&quot;%{ActiveProject:Kit:Name}&quot;.includes(&quot;Qt 5.13.2 MSVC2017&quot;)) &quot;qt5.13.2.msvc&quot;; else if (&quot;%{ActiveProject:Kit:Name}&quot;.includes(&quot;Qt 5.15.2 MinGW&quot;)) &quot;qt5.15.2&quot;; else if (&quot;%{ActiveProject:Kit:Name}&quot;.includes(&quot;Qt 5.15.2 MSVC2019&quot;)) &quot;qt5.15.2.msvc&quot;; else if (&quot;%{ActiveProject:Kit:Name}&quot;.includes(&quot;Qt 5.5.1 MinGW&quot;)) &quot;default&quot;; else &quot;default&quot;}</arguments>
+    </executable>
+</externaltool>

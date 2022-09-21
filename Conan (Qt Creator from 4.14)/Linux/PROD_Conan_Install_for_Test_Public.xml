@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Чт сен 13 11:59:53 2018 by Qt Creator 4.7.0-->
+<externaltool id="PROD_Conan_Install_for_Test_Public">
+    <description>PROD Conan Install for Test Public</description>
+    <displayname>PROD Conan Install for Test Public</displayname>
+    <category>Conan PROD</category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>conan</path>
+        <arguments>install -if &quot;%{ActiveProject:BuildConfig:Path}/test_package&quot; &quot;%{ActiveProject:Path}/test_package&quot; --build=never -s build_type=%{JS:if (&quot;%{ActiveProject:BuildConfig:Type}&quot; == &quot;debug&quot;) &quot;Debug&quot;; else &quot;Release&quot;} -u</arguments>
+    </executable>
+</externaltool>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Пт сен 13 10:13:24 2019 by Qt Creator 4.9.2-->
+<externaltool id="Conan_Install_Prod">
+    <description>PROD Conan Install for Project</description>
+    <displayname>PROD Conan Install for Project</displayname>
+    <category>Conan</category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>conan</path>
+        <arguments>install -if &quot;%{CurrentProject:BuildPath}&quot; &quot;%{CurrentProject:Path}&quot; --build=never -s build_type=%{JS:if (&quot;%{CurrentBuild:Type}&quot; == &quot;release&quot;) &quot;Release&quot;; else &quot;Debug&quot;} -u -pr %{JS:if (&quot;%{CurrentKit:Id}&quot; == &quot;qt.qt5.598.win32_mingw53_kit&quot;) &quot;qt5.9.8&quot;; else if (&quot;%{CurrentKit:Id}&quot; == &quot;qt.qt5.5132.win32_mingw73_kit&quot;) &quot;qt5.13.2&quot;; else if (&quot;%{CurrentKit:Id}&quot; == &quot;qt.qt5.5132.win32_msvc2017_kit&quot;) &quot;qt5.13.2.msvc&quot;; else if (&quot;%{CurrentKit:Id}&quot; == &quot;qt.qt5.5152.win32_mingw81_kit&quot;) &quot;qt5.15.2&quot;; else if (&quot;%{CurrentKit:Id}&quot; == &quot;qt.qt5.5152.win32_msvc2019_kit&quot;) &quot;qt5.15.2.msvc&quot;; else if (&quot;%{CurrentKit:Id}&quot; == &quot;qt.55.win32_mingw492_kit&quot;) &quot;default&quot;; else &quot;default&quot;}</arguments>
+    </executable>
+</externaltool>

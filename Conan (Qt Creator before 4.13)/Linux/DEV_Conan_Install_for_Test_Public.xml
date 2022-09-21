@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Written on Чт сен 13 11:59:53 2018 by Qt Creator 4.7.0-->
+<externaltool id="DEV_Conan_Install_for_Test_Public">
+    <description>DEV Conan Install for Test Public</description>
+    <displayname>DEV Conan Install for Test Public</displayname>
+    <category>Conan DEV</category>
+    <executable output="showinpane" error="showinpane" modifiesdocument="no">
+        <path>conan</path>
+        <arguments>install -if &quot;%{CurrentProject:BuildPath}/test_package&quot; &quot;%{CurrentProject:Path}/test_package&quot; --build=never -s build_type=%{JS:if (&quot;%{CurrentBuild:Type}&quot; == &quot;release&quot;) &quot;Release&quot;; else &quot;Debug&quot;} -e OVERRIDE_CONAN_CHANNEL=dev -u</arguments>
+    </executable>
+</externaltool>
